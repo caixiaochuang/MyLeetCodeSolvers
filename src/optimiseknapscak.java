@@ -43,16 +43,11 @@ public class optimiseknapscak {
         0 2 4 6 8 10
         */
         int[] dp = new int[V+1];
-        dp[0] = 0;
+        // dp[0] = 0;
         for(int i = 1; i <= N; i++){
-            for(int j = V; j >= v[i]; j--){
-                dp[j] = Math.max(dp[j], dp[j-v[i]] + w[i]);
+            for(int j = V; j >= v[i]; j--) {
+                dp[j] = Math.max(dp[j], dp[j - v[i]] + w[i]);
             }
-            // for(int j = 0; j <= V; j++){
-            //     System.out.print(dp[j]);
-            //     System.out.print(" ");
-            // }
-            // System.out.print("\n");
         }
         System.out.println(dp[V]);
     }
